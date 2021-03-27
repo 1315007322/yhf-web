@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  // 
+  let eventBus = {
+      event: [],
+      // 发布
+      emit: (fn) => {
+        this.event.forEach(item => {
+          item();
+        })
+      },
+      // 订阅
+      on: (fn) => {
+        this.event.push(fn);
+      },
+      // 取消订阅
+      off: () => {},
+  }
+
+  function handleClick() {
+    console.info(1)
+  }
+</script>
+<body>
+  <div>
+
+  </div>
+  <button onClick="handleClick()">按钮</button>
+  $emit $on
+</body>
+</html>
