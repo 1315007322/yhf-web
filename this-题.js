@@ -14,9 +14,9 @@ var point = {
     moveY(y);
   },
 };
-point.moveTo(1, 1);
-console.log(point.x);
-console.log(point.y);
+point.moveTo(1, 1); //this=> windows
+console.log(point.x); //0
+console.log(point.y);//0
 
 // 2.
 var point = {
@@ -34,7 +34,7 @@ var point = {
 };
 point.moveTo.moveX(1);
 point.moveTo.moveY(1);
-console.log(point.x);
-console.log(point.y);
-console.log(x);
-console.log(y);
+console.log(point.x);//0   this 指向 moveTo
+console.log(point.y);//0
+console.log(x);//und
+console.log(y);//und
