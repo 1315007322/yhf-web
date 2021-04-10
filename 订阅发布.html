@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<script>
-  // 
-  let eventBus = {
-      event: [],
-      // 发布
-      emit: (fn) => {
-        this.event.forEach(item => {
-          item();
-        })
-      },
-      // 订阅
-      on: (fn) => {
-        this.event.push(fn);
-      },
-      // 取消订阅
-      off: () => {},
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    // 妈妈桑
+    const Event = {
+      eventList: [],
+      on: function (key, fn) {
+        if (!this.eventList[key]) {
+          this.eventList[key] = [];
+        }
 
-  function handleClick() {
-    console.info(1)
-  }
-</script>
-<body>
-  <div>
+        this.eventList[key].push(fn);
+      },
+      emit: function (key, data) {
+        (this.eventList[key] || []).forEach((item) => {
+          item(data);
+        });
+      },
+      off: function (key, fn) {
+        if (!fn) this.eventList[key] = [];
 
-  </div>
-  <button onClick="handleClick()">按钮</button>
-  $emit $on
-</body>
+        const index = (this.eventList || [])[key].findIndex(
+          (item) => item === fn
+        );
+        if (index > -1) {
+          this.eventList[key].splice(index, 1);
+        }
+      },
+    };
+
+    let num = 0;
+
+    const fn = ({ num }) => {
+      const numElement = document.getElementById("num");
+      numElement.innerHTML = `点击了${num}次`;
+    };
+
+    Event.on("click", fn);
+
+    function handleClick() {
+      Event.emit("click", { num: num++ });
+    }
+  </script>
+  <body>
+    <div id="num"></div>
+    <button onClick="handleClick()">按钮</button>
+  </body>
 </html>
