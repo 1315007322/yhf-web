@@ -38,3 +38,10 @@ console.log(point.x);//0   this 指向 moveTo
 console.log(point.y);//0
 console.log(x);//und
 console.log(y);//und
+
+
+
+
+
+
+
