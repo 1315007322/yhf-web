@@ -1,21 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState} from 'react'
-import Hello from './components/hello'
+import './App.css'
+import { useState } from 'react'
+import BasicLayout from './layout'
+import 'antd/dist/antd.less';
 
-function App() {
-  const [title,setTitle]  =  useState(1)
+function App() { 
   return (
-    <div className="App">
-      {/* <button onClick={() =>{
-        let a = title + 1
-        setTitle(a)
-      }}>点击我</button>
-      <Hello title={title}></Hello> */}
-
-      
-    </div> 
-    
+    <BasicLayout />
   );
 }
 
