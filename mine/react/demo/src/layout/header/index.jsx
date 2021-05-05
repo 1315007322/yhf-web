@@ -1,6 +1,6 @@
 import { Typography,Layout } from 'antd';
 import Nav from '../../components/menu'
-import './index.scss'
+import './index.less'
 
 const {Header} = Layout
 const { Title } = Typography;

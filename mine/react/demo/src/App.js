@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import BasicLayout from './layout'
-import 'antd/dist/antd.less';
+// import 'antd/dist/antd.less';
 
 function App() { 
   return (
