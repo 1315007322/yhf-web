@@ -1,8 +1,6 @@
 function Parent(name) {
   this.name = name;
-  return {
-    age: 18,
-  };
+  
 }
 
 Parent();
@@ -16,11 +14,11 @@ function myNew(con, ...args) {
   // 2. 将对象的原型指向构造函数的原型
   obj.__proto__ = con.prototype;
 
-  // 3. 执行构造函数，并且将this指向空对象
+  // 3. 执行构造函数，并且将this指向空对象   
   const result = con.apply(obj, args);
   // 4. 类型检验构造函数执行结果， 为object 返回， 不为object 将obj返回
   return result instanceof Object ? result : obj;
 }
 
 var parent1 = myNew(Parent, "父亲");
-console.info(parent1);
+console.info(parent1 instanceof Parent);

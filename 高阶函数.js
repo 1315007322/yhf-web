@@ -24,4 +24,4 @@ console.info(checkType("Array"));
 
 type(a, b)("string");
 // 高阶组件
-connect(mapStatetopros, mapDispatchtoProps)(B);
+// connect(mapStatetopros, mapDispatchtoProps)(B);

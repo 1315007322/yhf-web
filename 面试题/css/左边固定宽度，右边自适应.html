@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .bg1{
+            background-color: blue;
+        }
+        .bg2{
+            background-color: green;
+        }
+        /* 方法一 */
+        /* 左浮动，右边block 设置margin */
+        /* .child1{
+            float: left;
+            width: 100px;
+        }
+        .child2{
+            margin-left: 100px;
+        } */
+        /* 方法二 */
+        /* flex弹性盒子 模型，左边固定，右边flex：1 */
+        /* .prarents{
+            display: flex;
+        }
+        .child1{
+            width: 100px;
+        }
+        .child2{
+            flex: 1;
+        } */
+        /* 方法三 有误*/
+        /* .prarents{
+            width: 100%;
+        }
+        .child1{
+            display: inline-block;
+            width: 100px;
+        }
+        .child2{
+            display: inline-block;
+            width: calc(100% - 100px);
+        } */
+        /* 方法四 */
+        /* 利用overfow触发bfc自适应 */
+        /* .child1{
+            width: 100px;
+            float: left;
+        }
+        .child2{
+            overflow: hidden;
+        } */
+        /* 方法五 */
+        /* 利用表格自动分配宽度 */
+        /* .prarents{
+            width: 100%;
+            display: table;
+        }
+        .child1{
+            display: table-cell;
+            width: 100px;
+        }
+        .child2{
+            display: table-cell;
+        } */
+        /* 方法六 */
+        /* 利用定位 left right 确定宽度 */
+        /* .prarents{
+            position: relative;
+        }
+        .child1{
+            position: absolute;
+            width: 100px;
+        }
+        .child2{
+            position: absolute;
+            left: 100px;
+            right: 0;
+        } */
+
+    </style>
+</head>
+<body>
+
+
+    <div class="prarents">
+        <div class="child1 bg1">
+            固定宽度
+        </div>
+        <div class="child2 bg2">
+            自适应宽度
+        </div>
+    </div>
+
+    
+</body>
+</html>

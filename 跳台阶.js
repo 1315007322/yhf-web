@@ -34,3 +34,9 @@
 
 // 3;
 //
+
+
+const arr = [1,2,6,3]
+
+arr.reverse()
+console.log(arr)

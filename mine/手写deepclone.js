@@ -5,7 +5,7 @@ const s1 = Symbol("s1")
 const target = {
     a: 1,
     b: "yhf",
-    c: function (){   //函数   消失
+    c: function (){   //函数消失
         console.log(c)
     },
     d: Date,   // 日期对象消失
